@@ -19,16 +19,18 @@ Every step/operation is contained in the makefile which supports the following t
 - `make clean`: Cleanup
 - `make deploy`: Deploy site files
 
-## Templates
+## Docs
+
+### Templates
 
 To change a template, just edit the file in the `templates/` folder.
 Template variables start with with `@`; The chart below shows which variables are allowed for each template.
 
-[!flowchart](docs/flowchart.png)
+![flowchart](docs/flowchart.png)
 
 _Note:_ Make sure to put each variable on its own line.
 
-## Deploy 
+### Deploy 
 
 Invoking `make deploy` will call `./bin/deploy` with the `site` path as first argument. 
 Example `./bin/deploy` using `scp`:
@@ -38,7 +40,12 @@ Example `./bin/deploy` using `scp`:
 scp -r $1 web-user@mywebserver:/var/www/website
 ~~~
 
-## Changing executables
+### Changing executables
 
 The default sass compiler (`sassc`), markdown compiler (`markdown_py`) and the content substitution scripts are called through `bin`.
-If you want to change them, either relink the symlinks or edit the variables in the Makefile.
+If you want to change them, either relink the symlinks in `bin` or edit the variables in the Makefile.
+
+## Todo
+
+- `img` folder for images.
+- Typescript support
